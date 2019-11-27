@@ -1,8 +1,10 @@
 <p>Shuffle</p>
-
+{{#if result}}
+    <p>Result {{ result }}</p>
+{{/if}}
 <p>
-    <form action="">
-        <input name="arrValues" type="text">
+    <form action="/api/shuffled" method="POST">
+        <input name="unshuffled" type="text" value="1,2,3,4,5">
         <input type="submit" value="Send">
     </form>
 </p>

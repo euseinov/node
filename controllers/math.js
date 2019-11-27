@@ -7,6 +7,5 @@ module.exports = class math{
     }
     average() {
         return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
-        //return this.max - this.min
     }
 }
