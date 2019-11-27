@@ -12,11 +12,23 @@ router.get('/api/random', (req, resp) => {
 
     var firstPart = new math(min, max)
 
-    resp.render('part1', {
-        title: 'Lession 1',
+    resp.render('random', {
+        title: 'random',
         min,
         max,
         result: firstPart.average()
+    })
+})
+
+router.get('/api/shuffle', (req, resp) => {
+    resp.render('shuffle', {
+        title: 'shuffle',
+    })
+}) 
+
+router.post('/api/shuffle', (req, resp) => {
+    resp.render('shuffle', {
+        title: 'shuffle',
     })
 }) 
 
