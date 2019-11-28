@@ -4,30 +4,19 @@ const config = require('../config/config');
 const router = Router()
 
 router.get('/', (req, resp) => {
-    resp.render('index')
+    console.log('index');
 })
 
 router.get('/api/random', (req, resp) => {
-    //console.log(config);
     var min = req.query.min || config.random.min
-    var max = req.query.max || config.random.max
+    var max = req.query.max || config.random.max    
 
-    var firstPart = new math(min, max)
-
-    resp.render('random', {
-        title: 'random',
-        min,
-        max,
-        result: firstPart.average()
-    })
+    var random = math.random(min, max)
+    console.log(random);
 })
 
-router.get('/api/shuffle', (req, resp) => {
-    resp.render('shuffle', {
-        title: 'shuffle',
-    })
+router.post('/api/shuffle', (req, resp) => {
+    console.log(req.body);
 }) 
-
-
 
 module.exports = router
