@@ -9,6 +9,9 @@ function shuffle(a) {
 }
 
 module.exports = { 
-    random: function(min, max) { return (Math.floor(Math.random() * (max - min) ) + min) / 10 },
-    shuffle: function(arrValues) { return shuffle(arrValues)}
+    random: function (min, max) {
+        return Math.floor(Math.random() * (max - min)) + min
+    },
+
+    shuffle
 }

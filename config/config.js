@@ -1,17 +1,9 @@
-const env = 'dev'; 
-
-const dev = {
+module.exports = {
     app: {
-      port: 3000
+      port: +process.env.PORT || 3000
     },
     random: {
         min: 0, 
         max: 100
     }
 }
-
-const config = {
-    dev
-};
-   
-module.exports = config[env];
