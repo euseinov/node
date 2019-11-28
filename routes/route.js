@@ -16,7 +16,9 @@ router.get('/api/random', (req, resp) => {
 })
 
 router.post('/api/shuffle', (req, resp) => {
-    console.log(req.body);
+    var shuffle = math.shuffle(req.body.array)
+
+    console.log({"array": JSON.stringify(shuffle)})
 }) 
 
 module.exports = router
