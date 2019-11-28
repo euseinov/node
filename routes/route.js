@@ -12,12 +12,14 @@ router.get('/api/random', (req, resp) => {
     var max = req.query.max || config.random.max    
 
     var random = math.random(min, max)
+    resp.send(random);
     console.log(random);
 })
 
 router.post('/api/shuffle', (req, resp) => {
     var shuffle = math.shuffle(req.body.array)
 
+    resp.send({"array": JSON.stringify(shuffle)});
     console.log({"array": JSON.stringify(shuffle)})
 }) 
 
