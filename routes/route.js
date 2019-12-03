@@ -1,11 +1,7 @@
-const { Router } = require('express')
+const Router = require('express')
 const math = require('../services/math')
 const config = require('../config/config');
 const router = Router()
-
-router.get('/', (req, resp) => {
-    console.log('index');
-})
 
 router.get('/api/random', (req, resp) => {
     const min = +req.query.min || config.random.min
