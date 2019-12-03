@@ -14,6 +14,16 @@ router.get('/api/random', (req, resp) => {
     })
 })
 
+router.get('/api/fibonacci/:i', (req, resp) => {
+    const index = +req.params.i   
+
+    const fibonacci = math.fibonacci(index)
+
+    resp.json({ 
+        "result": fibonacci 
+    })
+})
+
 router.post('/api/shuffle', (req, resp) => {
     const shuffle = math.shuffle(req.body.array)
 
