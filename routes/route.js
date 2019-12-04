@@ -1,11 +1,11 @@
 const Router = require('express')
 const math = require('../services/math')
-const config = require('../config/config');
+const config = require('config');
 const router = Router()
 
 router.get('/api/random', (req, resp) => {
-    const min = +req.query.min || config.random.min
-    const max = +req.query.max || config.random.max    
+    const min = +req.query.min || config.get('random.min')
+    const max = +req.query.max || config.get('random.max')   
 
     const random = math.random(min, max)
 
